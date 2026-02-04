@@ -1,324 +1,167 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MemaPhoto - Privacy-first photo gallery with smarter-than-Google-Photos semantic search. Local-first, no data mining, battery-efficient.">
-    <meta name="keywords" content="photo gallery, privacy, local-first, semantic search, Google Photos alternative">
     <title>MemaPhoto - Privacy-First Smart Photo Gallery</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #f9fafb;
-            --border: #e5e7eb;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background: #ffffff;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        nav a {
-            margin-left: 30px;
-            text-decoration: none;
-            color: var(--text-light);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 80px 0 100px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 56px;
-            font-weight: 800;
-            margin-bottom: 24px;
-            line-height: 1.1;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero .tagline {
-            font-size: 24px;
-            color: var(--text-light);
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 14px 32px;
-            font-size: 16px;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary);
-            border-color: var(--primary);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Features Section */
-        .features {
-            padding: 80px 0;
-            background: var(--bg-light);
-        }
-
-        .features h2 {
-            text-align: center;
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 60px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 32px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-icon {
-            font-size: 48px;
-            margin-bottom: 16px;
-        }
-
-        .feature-card h3 {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .feature-card p {
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-
-        /* Footer */
-        footer {
-            padding: 40px 0;
-            background: var(--text-dark);
-            color: white;
-            text-align: center;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .footer-text {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 14px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero .tagline {
-                font-size: 18px;
-            }
-
-            .features h2 {
-                font-size: 32px;
-            }
-
-            nav {
-                display: none;
-            }
-        }
-    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description"
+        content="MemaPhoto - Privacy-first photo gallery with smarter-than-Google-Photos semantic search. Local-first, no data mining, battery-efficient." />
+    <meta name="keywords" content="photo gallery, privacy, local-first, semantic search, Google Photos alternative" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">MemaPhoto</div>
-                <nav>
-                    <a href="#features">Features</a>
-                    <a href="privacy.html">Privacy</a>
-                    <a href="support.html">Support</a>
-                </nav>
-            </div>
-        </div>
-    </header>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Privacy-First Smart Photo Gallery</h1>
-                <p class="tagline">
-                    Smarter than Google Photos. All processing happens on your device. 
-                    No data mining. No cloud lock-in. Just your photos, intelligently organized.
-                </p>
-                <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary">
-                        <span>📱 Download on App Store</span>
-                    </a>
-                    <a href="#" class="btn btn-secondary">
-                        <span>🤖 Get it on Google Play</span>
-                    </a>
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header" class="alt">
+            <h1>MemaPhoto</h1>
+            <p>Privacy-First Smart Photo Gallery<br />
+                Smarter than Google Photos. All processing happens on your device.</p>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li><a href="#intro" class="active">Why MemaPhoto</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#download">Download</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Introduction -->
+            <section id="intro" class="main">
+                <div class="spotlight">
+                    <div class="content">
+                        <header class="major">
+                            <h2>Your Photos. Your Device. Your Privacy.</h2>
+                        </header>
+                        <p>MemaPhoto is a local-first photo gallery that puts you back in control.
+                            All photo processing happens on your device using advanced AI models.
+                            No cloud uploads, no data mining, no surprise battery drain.
+                            Just intelligent photo organization that respects your privacy.</p>
+                        <ul class="actions">
+                            <li><a href="privacy.html" class="button">Privacy Policy</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="features" id="features">
-            <div class="container">
-                <h2>Why MemaPhoto?</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🔒</div>
+            <!-- Features Section -->
+            <section id="features" class="main special">
+                <header class="major">
+                    <h2>Why Choose MemaPhoto?</h2>
+                    <p>Six reasons to switch from Google Photos</p>
+                </header>
+                <ul class="features">
+                    <li>
+                        <span class="icon solid major style1 fa-lock"></span>
                         <h3>Privacy by Default</h3>
-                        <p>All photo processing happens locally on your device. Your photos never leave your phone unless you choose to back them up.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">🧠</div>
+                        <p>All photo processing happens locally on your device. Your photos never leave your phone
+                            unless you choose to back them up.</p>
+                    </li>
+                    <li>
+                        <span class="icon solid major style3 fa-brain"></span>
                         <h3>Smarter Semantic Search</h3>
-                        <p>Find photos using natural language. Search for "sunset beach" or "high-contrast blue lighting" and get accurate results instantly.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">⚡</div>
+                        <p>Find photos using natural language. Search for "sunset beach" or "high-contrast blue
+                            lighting" and get accurate results instantly.</p>
+                    </li>
+                    <li>
+                        <span class="icon solid major style5 fa-bolt"></span>
                         <h3>Battery Efficient</h3>
-                        <p>Smart indexing only runs when charging. No surprise battery drain. Optimized for modern mobile processors.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">🚫</div>
+                        <p>Smart indexing only runs when charging. No surprise battery drain. Optimized for modern
+                            mobile processors.</p>
+                    </li>
+                    <li>
+                        <span class="icon major style2 fa-ban"></span>
                         <h3>No Data Mining</h3>
-                        <p>We don't track you, analyze your photos for ads, or sell your data. Your memories are yours alone.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">💾</div>
+                        <p>We don't track you, analyze your photos for ads, or sell your data. Your memories are yours
+                            alone.</p>
+                    </li>
+                    <li>
+                        <span class="icon major style4 fa-database"></span>
                         <h3>Bring Your Own Storage</h3>
-                        <p>Use your own S3-compatible storage or keep everything local. No vendor lock-in. Full control over your data.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">🎯</div>
+                        <p>Use your own S3-compatible storage or keep everything local. No vendor lock-in. Full control
+                            over your data.</p>
+                    </li>
+                    <li>
+                        <span class="icon major style6 fa-check-circle"></span>
                         <h3>Deterministic Results</h3>
-                        <p>No AI hallucinations or random summaries. Get the exact photos you're looking for, every time.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+                        <p>No AI hallucinations or random summaries. Get the exact photos you're looking for, every
+                            time.</p>
+                    </li>
+                </ul>
+            </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="support.html">Support</a>
-                <a href="mailto:support@memaphotos.com">Contact</a>
-            </div>
-            <p class="footer-text">
-                © 2026 MemaPhoto. All rights reserved.
-            </p>
+            <!-- Download Section -->
+            <section id="download" class="main special">
+                <header class="major">
+                    <h2>Get MemaPhoto</h2>
+                    <p>Available for iOS and Android<br />
+                        Coming soon to App Store and Google Play</p>
+                </header>
+                <footer class="major">
+                    <ul class="actions special">
+                        <li><a href="#" class="button primary">Download on App Store</a></li>
+                        <li><a href="#" class="button primary">Get it on Google Play</a></li>
+                    </ul>
+                </footer>
+            </section>
+
         </div>
-    </footer>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <section>
+                <h2>About MemaPhoto</h2>
+                <p>MemaPhoto is built on the principle that your photos should remain private.
+                    We use cutting-edge on-device AI to provide Google Photos-level intelligence
+                    without compromising your privacy. Local-first, open architecture, zero data collection.</p>
+                <ul class="actions">
+                    <li><a href="support.html" class="button">Learn More</a></li>
+                </ul>
+            </section>
+            <section>
+                <h2>Contact</h2>
+                <dl class="alt">
+                    <dt>Support</dt>
+                    <dd><a href="mailto:support@memaphotos.com">support@memaphotos.com</a></dd>
+                    <dt>Privacy</dt>
+                    <dd><a href="mailto:privacy@memaphotos.com">privacy@memaphotos.com</a></dd>
+                </dl>
+                <ul class="icons">
+                    <li><a href="https://github.com/Artomatica/memaPhoto" class="icon brands fa-github alt"><span
+                                class="label">GitHub</span></a></li>
+                </ul>
+            </section>
+            <p class="copyright">&copy; 2026 MemaPhoto. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>
