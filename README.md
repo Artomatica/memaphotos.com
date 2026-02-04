@@ -1,12 +1,22 @@
-# MemaPhoto Website
+# Mema Website
 
-This directory contains the static website for MemaPhoto, hosted on GitHub Pages at [memaphotos.com](https://memaphotos.com).
+This directory contains the static website for Mema, hosted on GitHub Pages at [memaphotos.com](https://memaphotos.com).
 
 ## Pages
 
 - **index.html** - Landing page with product overview and value proposition
 - **privacy.html** - Privacy policy (required for App Store/Play Store submission)
 - **support.html** - Support page with FAQ and contact information
+
+## Waitlist (Optional)
+
+By default, the landing page uses a simple **mailto** link for “Join the waitlist”, which keeps the site static and
+avoids third-party tracking/scripts.
+
+If you later want an in-page signup form (email capture) on a static host like GitHub Pages:
+
+1. Add your provider’s embed code / form action to `web/index.html`.
+2. Update `web/privacy.html` to reflect the provider and data handling.
 
 ## Local Preview
 
@@ -73,9 +83,9 @@ Changes will be live within a few minutes.
 
 ## Design Notes
 
-- **No external dependencies**: All CSS is inline, no JavaScript frameworks
+- **Static hosting friendly**: Works on GitHub Pages
 - **Mobile-responsive**: Works on all screen sizes
-- **Fast loading**: Minimal HTML/CSS, no images (uses emoji for icons)
+- **Fast loading**: No JS frameworks; no tracking scripts
 - **Accessible**: Semantic HTML, proper heading hierarchy
 - **SEO-friendly**: Meta descriptions, proper titles, clean URLs
 
