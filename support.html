@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MemaPhoto Support - Get help with your privacy-first photo gallery app.">
+    <title>Support - MemaPhoto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --border: #e5e7eb;
+            --bg-light: #f9fafb;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        main {
+            padding: 60px 0;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 16px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-light);
+        }
+
+        .contact-box {
+            background: var(--bg-light);
+            padding: 32px;
+            border-radius: 12px;
+            margin: 32px 0;
+            border: 1px solid var(--border);
+        }
+
+        .contact-box h3 {
+            margin-top: 0;
+            color: var(--text-dark);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin: 16px 0;
+            gap: 12px;
+        }
+
+        .contact-item span {
+            font-size: 24px;
+        }
+
+        .contact-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .faq-item {
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item h3 {
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .faq-item p {
+            margin-bottom: 8px;
+        }
+
+        code {
+            background: var(--bg-light);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">MemaPhoto</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Support</h1>
+            <p class="subtitle">Get help with MemaPhoto or report an issue</p>
+
+            <div class="contact-box">
+                <h3>Contact Us</h3>
+                <div class="contact-item">
+                    <span>📧</span>
+                    <div>
+                        <strong>Email Support:</strong><br>
+                        <a href="mailto:support@memaphotos.com">support@memaphotos.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span>🐛</span>
+                    <div>
+                        <strong>Report a Bug:</strong><br>
+                        <a href="https://github.com/Artomatica/memaPhoto/issues" target="_blank">GitHub Issues</a>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>What makes MemaPhoto different from Google Photos?</h3>
+                <p>
+                    MemaPhoto processes everything locally on your device. Your photos never leave your phone unless you
+                    explicitly choose to back them up.
+                    We don't analyze your photos for advertising, don't sell your data, and don't use your images to
+                    train AI models.
+                </p>
+                <p>
+                    Plus, our semantic search is deterministic—you get the exact photos you're looking for, not
+                    AI-generated summaries or hallucinations.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Why does the app need photo library permissions?</h3>
+                <p>
+                    MemaPhoto needs read access to your photo library to display and organize your photos. This
+                    permission is used exclusively for local processing on your device.
+                </p>
+                <p>
+                    We never upload your photos or metadata to our servers. All AI processing (semantic indexing,
+                    search) happens entirely on your device.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Will indexing drain my battery?</h3>
+                <p>
+                    No. MemaPhoto uses a "Charging Only" indexing policy by default. Background indexing only runs when
+                    your device is plugged in and charging.
+                </p>
+                <p>
+                    You can manually trigger indexing in the foreground if needed, but the app is designed to be
+                    battery-efficient and won't surprise you with unexpected drain.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How does local semantic search work?</h3>
+                <p>
+                    MemaPhoto uses on-device AI models (MobileCLIP) to understand the content of your photos. When you
+                    search for something like "sunset beach" or "high-contrast blue lighting,"
+                    the app matches your query against locally-generated embeddings stored in a SQLite database on your
+                    device.
+                </p>
+                <p>
+                    Everything happens locally—no internet connection required for search.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I back up my photos to the cloud?</h3>
+                <p>
+                    Future versions will support optional cloud backup with two options:
+                </p>
+                <p>
+                    1. <strong>Bring Your Own Storage (BYOS):</strong> Connect your own S3-compatible storage (AWS,
+                    Backblaze, etc.). Your data goes directly from your device to your storage—we never see it.
+                </p>
+                <p>
+                    2. <strong>Managed Storage:</strong> We may offer managed storage in the future with client-side
+                    encryption (zero-knowledge). Your photos would be encrypted on your device before upload.
+                </p>
+                <p>
+                    Both options are opt-in and will require explicit consent.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I reset my search index?</h3>
+                <p>
+                    Go to Settings → "Wipe Derived Data". This will delete all locally-generated metadata, embeddings,
+                    and search indexes without touching your original photos.
+                </p>
+                <p>
+                    After wiping, you can re-index your library from scratch.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is MemaPhoto open source?</h3>
+                <p>
+                    The core domain logic and architecture are documented in our <a
+                        href="https://github.com/Artomatica/memaPhoto" target="_blank">GitHub repository</a>.
+                    We're committed to transparency and welcome community contributions.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What platforms are supported?</h3>
+                <p>
+                    MemaPhoto is available for iOS and Android. We use React Native for cross-platform development while
+                    maintaining native performance for AI processing.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How can I report a bug or request a feature?</h3>
+                <p>
+                    Please open an issue on our <a href="https://github.com/Artomatica/memaPhoto/issues"
+                        target="_blank">GitHub Issues page</a> or email us at
+                    <a href="mailto:support@memaphotos.com">support@memaphotos.com</a>.
+                </p>
+                <p>
+                    We appreciate detailed bug reports including your device model, OS version, and steps to reproduce
+                    the issue.
+                </p>
+            </div>
+
+            <h2>Still Need Help?</h2>
+            <p>
+                If you can't find an answer to your question, please reach out to us at
+                <a href="mailto:support@memaphotos.com">support@memaphotos.com</a>. We typically respond within 24-48
+                hours.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                <a href="index.html">Home</a> ·
+                <a href="privacy.html">Privacy Policy</a> ·
+                <a href="mailto:support@memaphotos.com">Contact</a>
+            </p>
+            <p style="margin-top: 12px;">© 2026 MemaPhoto. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
